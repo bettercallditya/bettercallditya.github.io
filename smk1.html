@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page Sekolah Menengah Kejuruan</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior:smooth;
+        }
+
+        /* Header saat transparan (default) */
+        .transparent-bg {
+            background-color: #ffffff;/* Warna latar belakang abu-abu */
+            color: black; 
+        }
+         /* Gambar-gambar latar belakang slideshow */
+        .bg-slide img {
+            height: 100%; /* Gambar diatur tingginya sesuai dengan parent (banner) */
+            width: auto; /* Lebar gambar disesuaikan agar menjaga aspek rasio */
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -50%);
+        }
+        
+        /* Styling tambahan untuk slideshow */
+        .slideshow-container {
+            background-color: black;
+            max-width: 100%;
+            position: relative;
+            top: 0;
+            left: 0;
+            margin: auto;
+            justify-content: center;
+            height: 450px;
+        }
+        .img-gallery:hover{
+            transform: scale(1.02);
+        }
+        /* Styling untuk gambar slide */
+        .mySlides {
+            max-width: 100%;
+            width: 100%;
+            height: 100%; /* Tetapkan tinggi tetap untuk gambar */
+            background-position: center;
+            background-size: contain; /* Gambar akan tetap memiliki ukuran aslinya dan muat dalam elemen */
+            background-repeat: no-repeat; /* Untuk menghindari pengulangan gambar */
+        }
+        .image{
+            width: 100%;
+            height: 100%;
+            opacity: 50%;
+        }
+        #dropdownDots{
+            margin-top: 68px;
+            border-radius: 0px 0px 16px 16px;
+        }
+        .underlined{
+            border-bottom: 1px solid gray;
+            margin-left: 8px;
+            margin-right: 8px;
+        }
+        .card {
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .card:hover{
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transform: scale(1.02);
+        }
+        /* Style untuk panel div */
+        .read-more-container {
+            max-height: 500px; /* Tinggi maksimum panel div */
+            overflow: hidden;
+        }
+        .read-more-content {
+            display: none;
+        }
+        .read-more-button {
+            display: block;
+            cursor: pointer;
+            color: blue;
+        }
+        .font-9{
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        @media (min-width: 1024px) {
+            /* Gambar-gambar latar belakang slideshow */
+        .bg-slide img {
+            height: 100%; /* Gambar diatur tingginya sesuai dengan parent (banner) */
+            width: auto; /* Lebar gambar disesuaikan agar menjaga aspek rasio */
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -50%);
+        }
+        .transparent-bg {
+            background-color: rgba(0, 0, 0, 0.2); /* Warna latar belakang transparan */
+            transition: background-color 0.3s ease;
+            border-bottom: 2px solid white;
+            color: #ffffff;
+            padding:20px;
+        }
+         /* Header saat di-scroll (berubah menjadi abu-abu) */
+         .scrolled-bg {
+            background-color: #ffffff;/* Warna latar belakang abu-abu */
+            color: black;
+            padding:20px;
+        }
+         .scrolled-bg a:hover{
+            background-color: #f3f3f3;/* Warna latar belakang abu-abu */
+            border-radius: 25px;
+        }
+        /* Styling tambahan untuk slideshow */
+        .slideshow-container {
+            background-color: black;
+            max-width: 100%;
+            position: relative;
+            top: 0;
+            left: 0;
+            margin: auto;
+            justify-content: center;
+            height: 800px;
+        }
+        /* Style untuk panel div */
+        .read-more-container {
+            max-height: 300px; /* Tinggi maksimum panel div */
+            overflow: hidden;
+        }
+        .read-more-content {
+            display: none;
+        }
+        .read-more-button {
+            display: block;
+            cursor: pointer;
+            color: blue;
+        }
+        }
+    </style>
+    
+</head>
+<body class="bg-gray-200 max-w-screen-2xl mx-auto shadow-2xl">
+
+<!-- Header -->
+<header class="bg-gray-500 tracking-light leading-3 p-4 lg:p-2 text-white fixed z-10 top-0 shadow-2xl left-0 w-full transparent-bg">
+    <div class="mx-auto flex justify-between items-center">
+        <div class="flex items-center">
+            <img src="smk-removebg-preview.png" class="h-12 mr-3" alt="School Logo">
+            <span class="self-center text-2xl font-bold whitespace-nowrap dark:text-white">SMK Negeri <span class="font-9 text-yellow-500 text-3xl">9</span> Medan</span>
+        </div>
+        <nav class="hidden lg:block">
+            <ul class="flex text-lg">
+                <li><a href="#" class="p-2">Beranda</a></li>
+                <li><a href="#about" class="p-2">Tentang Kami</a></li>
+                <li><a href="#sarpras" class="p-2">Sarana dan Prasarana</a></li>
+                <li><a href="#contact" class="p-2">Kontak</a></li>
+            </ul>
+        </nav>
+            <div class="flex justify-center bg-gray-500 rounded-full">
+                <div class="hidden lg:block rounded-full border-4 border-gray-200">
+                <img src="batman.jpg" class="h-12 w-12 rounded-full">
+                </div>
+                <div class="hidden lg:block text-sm text-gray-50 whitespace-nowrap bg-gray-500 p-2 px-4 rounded-full">
+                <h2>Mhd. Raditya Sabanna</h2>
+                <p>XII RPL 4</p>
+            </div>
+            </div>
+        <button id="dropdownMenuIconButton" data-dropdown-toggle="dropdownDots" class="inline-flex items-center p-2 lg:hidden text-sm font-medium text-center rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-50" type="button"> 
+            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 4 15">
+              <path d="M3.5 1.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0 6.041a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0 5.959a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"/>
+            </svg>
+        </button>
+<!-- Dropdown menu -->
+<div id="dropdownDots" class="z-6 fixed hidden divide-y divide-gray-100 bg-white shadow-2xl text-white fixed top-0 left-0 w-full">
+    <div class="flex justify-start bg-gray-500">
+    <div class="block lg:hidden flex justify-center">
+        <img src="batman.jpg" class="h-auto w-16">
+        </div>
+        <div class="block lg:hidden text-sm text-gray-50 whitespace-nowrap bg-gray-500 p-2 px-4">
+            <h2>Mhd. Raditya Sabanna</h2>
+            <p>XII RPL 4</p>
+        </div>
+    </div>
+    <ul class="py-2 pb-4 text-xl text-gray-700 dark:text-gray-200" aria-labelledby="dropdownMenuIconButton">
+      <li>
+        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white underlined">Beranda</a>
+      </li>
+      <li>
+        <a href="#about" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white underlined">Tentang Kami</a>
+      </li>
+      <li>
+        <a href="#sarpras" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white underlined">Sarana dan Prasarana</a>
+      </li>
+      <li>
+        <a href="#contact" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white underlined">Kontak</a>
+      </li>
+    </ul>
+    </div>
+    </div>
+</header>
+
+<!-- Banner -->
+    <div class="relative z-90 flex mt-16 lg:mt-0 justify-center items-center h-full w-full">
+        <div class="relative w-full max-w-screen-2xl">
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <img src="sekolah.jpg" alt="Slide 1" class="image object-cover object-center">
+                </div>
+    
+                <div class="mySlides fade">
+                    <img src="sekolah4.jpg" alt="Slide 2" class="image object-cover object-center">
+                </div>
+    
+                <div class="mySlides fade">
+                    <img src="sekolah2.jpg" alt="Slide 3" class="image object-cover object-center">
+                </div>
+            </div>
+        </div>
+        <div class="container mx-auto absolute bottom-16 left-4 z-80">
+            <div class="flex"></div>
+            <h1 class="text-4xl font-semibold text-white">Menginspirasi Masa Depan</h1>
+            <p class="mt-4 text-lg text-white">SMKN 9 Medan adalah tempat terbaik untuk mengembangkan potensi Anda.</p>
+            <a href="#" class="mt-8 rounded-lg inline-block px-6 py-3 bg-yellow-500 text-white hover:bg-yellow-600 transition duration-300" id="about">Info Lebih Lanjut</a>
+        </div>
+    </div>
+</div>
+
+<!-- Tentang Kami -->
+<section class="bg-blue-600 py-12">
+  <div class="mx-auto px-8">
+      <div class="w-full mx-auto text-center lg:flex">
+        <img src="upacara.jpg" class="w-full img-gallery transition duration-700 ease-in-out object-cover object-center h-64 order-first lg:max-w-lg rounded-xl lg:h-auto mx-auto lg:mx-0">
+        <div class="pt-6 lg:p-8 text-justify space-y-4">
+            <div class="flex">
+            <svg style="color: white" xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16"> <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" fill="white"></path> <path fill-rule="evenodd" d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z" fill="white"></path> <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z" fill="white"></path> </svg>
+          <h2 class="text-4xl font-bold text-gray-50 ml-4">Tentang Kami</h2>
+          </div>
+          <p class="mt-4 text-gray-200 text-xl">Selamat datang di SMK Negeri 9 Medan, sebuah sekolah menengah kejuruan yang berdedikasi untuk memberikan pendidikan berkualitas tinggi kepada para siswa. Kami bangga menjadi bagian dari perjalanan pendidikan Anda dan memiliki komitmen untuk membantu Anda mencapai potensi terbaik Anda.</p>
+        </div>
+      </div>
+  </div>
+</section>
+
+<!-- Visi dan Misi Section -->
+<section class="bg-white py-12 mx-auto">
+  <div class="mx-auto px-8 lg:flex">
+    <img src="sekolah.jpg" class="w-full img-gallery transition duration-700 ease-in-out h-80 object-cover object-center lg:max-w-lg lg:h-auto rounded-xl order-last">
+      <div class="pt-6 lg:p-8 space-y-4 text-justify">
+        <div class="flex">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-exclamation-diamond-fill" viewBox="0 0 16 16"> <path d="M9.05.435c-.58-.58-1.52-.58-2.1 0L.436 6.95c-.58.58-.58 1.519 0 2.098l6.516 6.516c.58.58 1.519.58 2.098 0l6.516-6.516c.58-.58.58-1.519 0-2.098L9.05.435zM8 4c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995A.905.905 0 0 1 8 4zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/> </svg>
+          <h2 class="text-4xl font-bold text-gray-800 ml-4">Visi dan Misi</h2>
+        </div>
+          <p class="mt-4 text-gray-600 text-xl">Visi:<br> "Menjadi SMK unggulan yang berorientasi pada prestasi, berbudaya, dan berwawasan lingkungan tahun 2025."</p>
+          <p class="mt-4 text-gray-600 text-xl">Misi:</p>
+          <ul class="ml-8 list-disc text-xl text-gray-600 list-outside">
+              <li>Memberikan pendidikan dan pelatihan berkualitas tinggi yang sesuai dengan tuntutan dunia kerja.</li>
+              <li>Membina karakter siswa dengan nilai-nilai moral dan etika yang tinggi.</li>
+              <li>Mengembangkan potensi siswa dalam bidang akademik dan kejuruan.</li>
+              <li>Menyediakan lingkungan belajar yang kondusif dan fasilitas yang modern.</li>
+              <li>Mendorong partisipasi siswa dalam kegiatan ekstrakurikuler dan pengabdian masyarakat.</li>
+              <li>Menumbuhkan kesadaran lingkungan dan kepedulian sosial di kalangan siswa.</li>
+          </ul>
+        <div id="sarpras">
+        </div>
+      </div>
+  </div>
+</section>
+
+
+<!-- Main Content -->
+<section class="py-8">
+  <div class="text-4xl font-bold text-gray-800 mx-auto flex justify-center mb-8"><svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" fill="currentColor" class="bi bi-building" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M14.763.075A.5.5 0 0 1 15 .5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V14h-1v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V10a.5.5 0 0 1 .342-.474L6 7.64V4.5a.5.5 0 0 1 .276-.447l8-4a.5.5 0 0 1 .487.022zM6 8.694 1 10.36V15h5V8.694zM7 15h2v-1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V15h2V1.309l-7 3.5V15z"/> <path d="M2 11h1v1H2v-1zm2 0h1v1H4v-1zm-2 2h1v1H2v-1zm2 0h1v1H4v-1zm4-4h1v1H8V9zm2 0h1v1h-1V9zm-2 2h1v1H8v-1zm2 0h1v1h-1v-1zm2-2h1v1h-1V9zm0 2h1v1h-1v-1zM8 7h1v1H8V7zm2 0h1v1h-1V7zm2 0h1v1h-1V7zM8 5h1v1H8V5zm2 0h1v1h-1V5zm2 0h1v1h-1V5zm0-2h1v1h-1V3z"/> </svg><span class="ml-4">Sarana dan Prasarana</span></div>
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="p-2">
+        <div class="card bg-blue-200 hover:bg-blue-300 transition duration-700 ease-in-out">
+            <a href="sarpras.html#jurusan">
+                <div class="flex">
+                <svg style="color: rgb(0, 0, 0);" width="30" height="30" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" clip-rule="evenodd" d="M3 5C3 3.89543 3.89543 3 5 3H15C16.1046 3 17 3.89543 17 5V13C17 14.1046 16.1046 15 15 15H12.7808L12.903 15.4887L13.7071 16.2929C13.9931 16.5789 14.0787 17.009 13.9239 17.3827C13.7691 17.7563 13.4045 18 13 18H7.00003C6.59557 18 6.23093 17.7563 6.07615 17.3827C5.92137 17.009 6.00692 16.5789 6.29292 16.2929L7.09706 15.4887L7.21925 15H5C3.89543 15 3 14.1046 3 13V5ZM8.7713 12C8.75657 11.9997 8.74189 11.9997 8.72725 12H5V5H15V12H11.2728C11.2582 11.9997 11.2435 11.9997 11.2288 12H8.7713Z" fill="#000000"></path>
+                </svg>
+          <h2 class="text-2xl font-semibold ml-2">Bidang Kejuruan</h2>
+        </div>
+          <p class="mt-4">Kami menawarkan beragam program bidang kejuruan yang siap mempersiapkan Anda untuk masa depan yang cerah.</p>
+          </a>
+        </div>
+      </div>
+      <div class="p-2">
+        <div class="card bg-green-200 hover:bg-green-300 transition duration-700 ease-in-out">
+            <a href="sarpras.html#jurusan1">
+                <div class="flex">
+                    <svg style="color: rgb(0, 0, 0);" width="30" height="30" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.09,11h4.86c-0.16-1.61-0.71-3.11-1.54-4.4C18.68,7.43,17.42,9.05,17.09,11z" fill="#000000"></path><path d="M6.91,11C6.58,9.05,5.32,7.43,3.59,6.6C2.76,7.89,2.21,9.39,2.05,11H6.91z" fill="#000000"></path><path d="M15.07,11c0.32-2.59,1.88-4.79,4.06-6c-1.6-1.63-3.74-2.71-6.13-2.95V11H15.07z" fill="#000000"></path><path d="M8.93,11H11V2.05C8.61,2.29,6.46,3.37,4.87,5C7.05,6.21,8.61,8.41,8.93,11z" fill="#000000"></path><path d="M15.07,13H13v8.95c2.39-0.24,4.54-1.32,6.13-2.95C16.95,17.79,15.39,15.59,15.07,13z" fill="#000000"></path><path d="M3.59,17.4c1.72-0.83,2.99-2.46,3.32-4.4H2.05C2.21,14.61,2.76,16.11,3.59,17.4z" fill="#000000"></path><path d="M17.09,13c0.33,1.95,1.59,3.57,3.32,4.4c0.83-1.29,1.38-2.79,1.54-4.4H17.09z" fill="#000000"></path><path d="M8.93,13c-0.32,2.59-1.88,4.79-4.06,6c1.6,1.63,3.74,2.71,6.13,2.95V13H8.93z" fill="#000000"></path></svg>
+          <h2 class="text-2xl font-semibold ml-2">Program Ekstrakulikuler</h2>
+        </div>
+          <p class="mt-4">Suatu kesempatan tambahan bagi siswa untuk memperluas minat dan bakat mereka, dan membangun keterampilan sosial untuk masa depan mereka.</p>
+            </a>
+        </div>
+      </div>
+      <div class="p-2">
+        <div class="card bg-yellow-200 hover:bg-yellow-300 transition duration-700 ease-in-out">
+            <a href="sarpras.html#jurusan2">
+            <div class="flex">
+                <svg style="color: rgb(0, 0, 0);" width="30" height="30" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 9v11M4 9h16M4 9H3l9-5 9 5h-1M4 20h16M4 20H3m17 0V9m0 11h1M8 13v3m4 0v-3m4 0v3" fill="#000000"></path></svg>
+          <h2 class="text-2xl font-semibold ml-2">Fasilitas Terbaik</h2>
+        </div>
+          <p class="mt-4">Fasilitas modern kami, termasuk laboratorium, perpustakaan, dan ruang olahraga, membantu meningkatkan pengalaman belajar Anda.</p>
+        </a>
+        </div>
+      </div>
+      <div class="p-2">
+        <div class="card bg-pink-200 hover:bg-pink-300 transition duration-700 ease-in-out">
+            <a href="sarpras.html#jurusan3">
+            <div class="flex">
+                <svg style="color: rgb(0, 0, 0);" width="30" height="30" xmlns="http://www.w3.org/2000/svg" width="8" height="8" fill="currentColor" class="bi bi-trophy" viewBox="0 0 16 16"> <path d="M2.5.5A.5.5 0 0 1 3 0h10a.5.5 0 0 1 .5.5c0 .538-.012 1.05-.034 1.536a3 3 0 1 1-1.133 5.89c-.79 1.865-1.878 2.777-2.833 3.011v2.173l1.425.356c.194.048.377.135.537.255L13.3 15.1a.5.5 0 0 1-.3.9H3a.5.5 0 0 1-.3-.9l1.838-1.379c.16-.12.343-.207.537-.255L6.5 13.11v-2.173c-.955-.234-2.043-1.146-2.833-3.012a3 3 0 1 1-1.132-5.89A33.076 33.076 0 0 1 2.5.5zm.099 2.54a2 2 0 0 0 .72 3.935c-.333-1.05-.588-2.346-.72-3.935zm10.083 3.935a2 2 0 0 0 .72-3.935c-.133 1.59-.388 2.885-.72 3.935zM3.504 1c.007.517.026 1.006.056 1.469.13 2.028.457 3.546.87 4.667C5.294 9.48 6.484 10 7 10a.5.5 0 0 1 .5.5v2.61a1 1 0 0 1-.757.97l-1.426.356a.5.5 0 0 0-.179.085L4.5 15h7l-.638-.479a.501.501 0 0 0-.18-.085l-1.425-.356a1 1 0 0 1-.757-.97V10.5A.5.5 0 0 1 9 10c.516 0 1.706-.52 2.57-2.864.413-1.12.74-2.64.87-4.667.03-.463.049-.952.056-1.469H3.504z" fill="#000000"></path> </svg>
+          <h2 class="text-2xl font-semibold ml-2">Testimoni dan Prestasi</h2>
+        </div>
+          <p class="mt-2">Siswa-siswa kami telah meraih berbagai prestasi dan kesuksesan di berbagai bidang, membuktikan kualitas pendidikan kami.</p>
+        </a>
+        <div id="contact"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontak Kami -->
+  <section class="bg-black py-16 px-8">
+    <div class="container mx-auto">
+        <div class="flex">
+            <div class="mt-2">
+        <svg style="color: rgb(255, 255, 255);" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-telephone-inbound-fill" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511zM15.854.146a.5.5 0 0 1 0 .708L11.707 5H14.5a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 1 0v2.793L15.146.146a.5.5 0 0 1 .708 0z" fill="#ffffff"></path> </svg>
+    </div>
+        <h1 class="text-4xl font-bold text-gray-100 text-center mb-16 ml-4">Kontak Kami</h1>
+    </div>
+        <!-- Informasi Kontak -->
+        <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8">
+            <!-- Peta Google -->
+            <div class="w-full md:w-1/2">
+                <div class="map-container bg-gray-400 h-400 md:h-96 rounded-lg overflow-hidden">
+                    <!-- Letakkan iframe dari Google Maps di sini -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d585.0414425738975!2d98.62098188436839!3d3.589306808250504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30312e4f46b5ab19%3A0x447dc6ab3d465c1e!2sSekolah%20Menengah%20Kejuruan%20Negeri%209%20Medan!5e1!3m2!1sid!2sid!4v1696651793857!5m2!1sid!2sid" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+
+            <!-- Informasi Kontak -->
+            <div class="w-full md:w-1/2">
+                <div class="text-gray-100">
+                    <h2 class="text-2xl font-semibold py-4"><strong>Alamat:</strong></h2>
+                    <p class="bg-white rounded-xl text-gray-700 p-4 border-2 border-gray-200">Jl. Patriot No.20 A, Lalang, Kec. Medan Sunggal, Kota Medan, Sumatera Utara</p>
+                    <h2 class="text-2xl font-semibold py-4"><strong>Nomor Telepon:</strong></h2>
+                    <p class="bg-white rounded-xl text-gray-700 p-4 border-2 border-gray-200">(061) 845-4350</p>
+                    <h2 class="text-2xl font-semibold py-4"><strong>Website:</strong></h2>
+                    <p class="bg-white rounded-xl text-gray-700 p-4 border-2 border-gray-200"> <a href="https://www.smkn9medan.com">www.smkn9medan.com</a></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Komentar Responsif -->
+        <div class="mt-8 text-gray-100">
+            <p class="hidden md:block">Jika Anda memiliki pertanyaan atau ingin menghubungi kami, jangan ragu untuk mengisi formulir di bawah ini:</p>
+            <p class="md:hidden">Jika Anda memiliki pertanyaan atau ingin menghubungi kami, silakan hubungi kami di nomor telepon di atas atau kunjungi situs web kami.</p>
+
+            <!-- Formulir Kontak (bisa ditambahkan jika diperlukan) -->
+            <form>
+                <div class="mt-4">
+                    <label for="nama" class="block font-semibold">Nama:</label>
+                    <input type="text" id="nama" name="nama" class="w-full px-4 py-2 border rounded-md">
+                </div>
+                <div class="mt-4">
+                    <label for="email" class="block font-semibold">Email:</label>
+                    <input type="email" id="email" name="email" class="w-full px-4 py-2 border rounded-md">
+                </div>
+                <div class="mt-4">
+                    <label for="pesan" class="block font-semibold">Pesan:</label>
+                    <textarea id="pesan" name="pesan" class="w-full px-4 py-2 border rounded-md"></textarea>
+                </div>
+                <button type="submit" class="mt-6 px-6 py-3 bg-yellow-500 text-white hover:bg-yellow-600 rounded-md transition duration-300">Kirim Pesan</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-white py-8">
+    <div class="container mx-auto text-center">
+        <div class="mb-4">Ikuti Kami:</div>
+        <div class="flex justify-center space-x-4">
+            <a href="https://www.facebook.com/smkn9medan?mibextid=ZbWKwL" class="text-blue-500 hover:text-blue-200 transition duration-300">
+            <img src="icons8-facebook.svg" class="mx-auto">Facebook</a>
+            <a href="https://www.tiktok.com/@smkn9medan?_t=8gObca6RHeC&_r=1" class="text-blue-500 hover:text-blue-200 transition duration-300">
+            <img src="icons8-tiktok.svg" class="mx-auto">Tiktok</a>
+            <a href="https://instagram.com/smkn9medan?igshid=MzRlODBiNWFlZA==" class="text-blue-500 hover:text-blue-200 transition duration-300">
+            <img src="icons8-instagram.svg" class="mx-auto">Instagram</a>
+        </div>
+        <div class="mt-4">&copy; 2023 SMKN 9 Medan</div>
+    </div>
+</footer>
+<script>
+    // Seleksi elemen header
+    const header = document.querySelector('header');
+
+    // Tambahkan event listener untuk mendeteksi scroll
+    window.addEventListener('scroll', () => {
+        // Saat posisi scroll lebih dari 100 pixel dari atas, tambahkan kelas 'scrolled-bg'
+        if (window.scrollY > 100) {
+            header.classList.add('scrolled-bg');
+        } else {
+            // Saat posisi scroll kembali ke atas, hapus kelas 'scrolled-bg'
+            header.classList.remove('scrolled-bg');
+        }
+    });
+    let slideIndex = 0;
+
+function showSlides() {
+    let slides = document.getElementsByClassName("mySlides");
+
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+
+    slideIndex++;
+
+    if (slideIndex > slides.length) {
+        slideIndex = 1;
+    }
+
+    slides[slideIndex - 1].style.display = "block";
+
+    setTimeout(showSlides, 2000); // Ganti gambar setiap 2 detik
+}
+
+function plusSlides(n) {
+    showSlide(slideIndex += n);
+}
+
+function showSlide(n) {
+    let slides = document.getElementsByClassName("mySlides");
+
+    if (n > slides.length) {
+        slideIndex = 1;
+    }
+
+    if (n < 1) {
+        slideIndex = slides.length;
+    }
+
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+
+    slides[slideIndex - 1].style.display = "block";
+}
+
+showSlides();
+// Ambil elemen tombol dan dropdown
+const dropdownButton = document.getElementById('dropdownMenuIconButton');
+  const dropdownMenu = document.getElementById('dropdownDots');
+
+  // Tambahkan event listener untuk mengontrol dropdown
+  dropdownButton.addEventListener('click', function () {
+    // Cek apakah dropdown sedang terbuka atau tidak
+    const isOpen = dropdownMenu.classList.contains('hidden');
+
+    // Jika terbuka, tutup dropdown
+    if (isOpen) {
+      dropdownMenu.classList.remove('hidden');
+    } else {
+      // Jika tertutup, buka dropdown dan menutup dropdown lainnya jika ada
+      closeAllDropdowns();
+      dropdownMenu.classList.add('hidden');
+    }
+  });
+
+  // Fungsi untuk menutup semua dropdown kecuali yang sedang diklik
+  function closeAllDropdowns() {
+    const allDropdowns = document.querySelectorAll('.dropdown');
+    allDropdowns.forEach((dropdown) => {
+      if (dropdown !== dropdownMenu) {
+        dropdown.classList.add('hidden');
+      }
+    });
+  }
+  const readMoreContainers = document.querySelectorAll(".read-more-container");
+        const readMoreContents = document.querySelectorAll(".read-more-content");
+        const readMoreButtons = document.querySelectorAll(".read-more-button");
+        let isReadMore = Array.from({ length: readMoreContainers.length }, () => false);
+
+        // Fungsi untuk menampilkan atau menyembunyikan teks tambahan pada card tertentu
+        function toggleReadMore(index) {
+            return function () {
+                if (!isReadMore[index]) {
+                    readMoreContainers[index].style.maxHeight = "none";
+                    readMoreContents[index].style.display = "block";
+                    readMoreButtons[index].textContent = "Sembunyikan";
+                } else {
+                    readMoreContainers[index].style.maxHeight = "auto"; // Atur tinggi maksimum kembali
+                    readMoreContents[index].style.display = "none";
+                    readMoreButtons[index].textContent = "Lihat Selengkapnya...";
+                }
+                isReadMore[index] = !isReadMore[index];
+            };
+        }
+
+        // Menambahkan event listener untuk tautan "Lihat Selengkapnya" pada setiap card menu
+        readMoreButtons.forEach((button, index) => {
+            button.addEventListener("click", toggleReadMore(index));
+        });
+</script>
+</body>
+</html>
