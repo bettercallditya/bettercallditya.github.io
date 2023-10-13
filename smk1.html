@@ -457,32 +457,47 @@ function showSlide(n) {
 showSlides();
 // Ambil elemen tombol dan dropdown
 const dropdownButton = document.getElementById('dropdownMenuIconButton');
-  const dropdownMenu = document.getElementById('dropdownDots');
+const dropdownMenu = document.getElementById('dropdownDots');
 
-  // Tambahkan event listener untuk mengontrol dropdown
-  dropdownButton.addEventListener('click', function () {
-    // Cek apakah dropdown sedang terbuka atau tidak
-    const isOpen = dropdownMenu.classList.contains('hidden');
+// Tambahkan event listener untuk mengontrol dropdown
+dropdownButton.addEventListener('click', function () {
+  toggleDropdown();
+});
 
-    // Jika terbuka, tutup dropdown
-    if (isOpen) {
-      dropdownMenu.classList.remove('hidden');
-    } else {
-      // Jika tertutup, buka dropdown dan menutup dropdown lainnya jika ada
-      closeAllDropdowns();
-      dropdownMenu.classList.add('hidden');
+// Tambahkan event listener untuk menutup dropdown saat klik di luar dropdown
+document.addEventListener('click', function (event) {
+  const target = event.target;
+  if (!dropdownMenu.contains(target) && !dropdownButton.contains(target)) {
+    closeDropdown();
+  }
+});
+
+// Fungsi untuk membuka atau menutup dropdown
+function toggleDropdown() {
+  const isOpen = dropdownMenu.classList.contains('hidden');
+  closeAllDropdowns();
+
+  if (isOpen) {
+    dropdownMenu.classList.remove('hidden');
+  } else {
+    dropdownMenu.classList.add('hidden');
+  }
+}
+
+// Fungsi untuk menutup dropdown
+function closeDropdown() {
+  dropdownMenu.classList.add('hidden');
+}
+
+// Fungsi untuk menutup semua dropdown kecuali yang sedang diklik
+function closeAllDropdowns() {
+  const allDropdowns = document.querySelectorAll('.dropdown');
+  allDropdowns.forEach((dropdown) => {
+    if (dropdown !== dropdownMenu) {
+      dropdown.classList.add('hidden');
     }
   });
-
-  // Fungsi untuk menutup semua dropdown kecuali yang sedang diklik
-  function closeAllDropdowns() {
-    const allDropdowns = document.querySelectorAll('.dropdown');
-    allDropdowns.forEach((dropdown) => {
-      if (dropdown !== dropdownMenu) {
-        dropdown.classList.add('hidden');
-      }
-    });
-  }
+}
   const readMoreContainers = document.querySelectorAll(".read-more-container");
         const readMoreContents = document.querySelectorAll(".read-more-content");
         const readMoreButtons = document.querySelectorAll(".read-more-button");
